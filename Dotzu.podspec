@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version = '1.7'
   s.license = 'MIT'
   s.summary = 'iOS debugger tool for iOS developer. Display logs, network request, device informations, crash logs while using the app.'
-  s.homepage = 'https://github.com/remirobert/Dotzu'
+  s.homepage = 'https://github.com/EugeneGoloboyar/Dotzu.git'
   s.social_media_url = 'https://twitter.com/remi936'
   s.authors = { 'Rémi ROBERT' => 'remirobert33530@gmail.com' }
   s.source = { :git => 'https://github.com/remirobert/Dotzu.git', :tag => s.version }
