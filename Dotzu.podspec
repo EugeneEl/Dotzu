@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/remi936'
   s.authors = { 'Rémi ROBERT' => 'remirobert33530@gmail.com' }
   s.source = { :git => 'https://github.com/EugeneGoloboyar/Dotzu.git', :tag => s.version }
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.ios.frameworks = 'UIKit', 'Foundation'
   s.source_files = 'Dotzu/*.swift'
   s.resources = ["Dotzu/*.storyboard", 'Dotzu/*.xcassets', 'Dotzu/*.xib']
