@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/EugeneGoloboyar/Dotzu.git'}
   s.ios.deployment_target = '10.0'
   s.ios.frameworks = 'UIKit', 'Foundation'
-  s.source_files = 'Reachability/Framework/Dotzu/Dotzu/*.swift'
+  s.source_files = 'Dotzu/Framework/Dotzu/Dotzu/*.swift'
   s.resources = ["Dotzu/*.storyboard", 'Dotzu/*.xcassets', 'Dotzu/*.xib']
   s.requires_arc = true
   s.swift_version = '4.0'
