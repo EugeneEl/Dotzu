@@ -9,7 +9,6 @@
 import UIKit
 
 enum DeviceModel {
-
     case iPhone4
     case iPhone4S
     case iPhone5
@@ -22,6 +21,12 @@ enum DeviceModel {
     case iPhoneSE
     case iPhone7
     case iPhone7Plus
+    case iPhone8
+    case iPhone8Plus
+    case iPhoneX
+    case iPhoneXS
+    case iPhoneXSMax
+    case iPhoneXR
     case iPad1
     case iPad2
     case iPad3
@@ -63,6 +68,13 @@ enum DeviceModel {
         case "iPhone8,4":                                return .iPhoneSE
         case "iPhone9,1", "iPhone9,3":                   return .iPhone7
         case "iPhone9,2", "iPhone9,4":                   return .iPhone7Plus
+        case "iPhone10,1", "iPhone10,4":                 return .iPhone8
+        case "iPhone10,2", "iPhone10,5":                 return .iPhone8Plus
+        case "iPhone10,3", "iPhone10,6":                 return .iPhoneX
+        case "iPhone11,2":                               return .iPhoneXS
+        case "iPhone11,4", "iPhone11,6":                 return .iPhoneXSMax
+        case "iPhone11,8":                               return .iPhoneXR
+            
         case "iPad1,1":                                  return .iPad1
         case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .iPad2
         case "iPad3,1", "iPad3,2", "iPad3,3":            return .iPad3
@@ -73,7 +85,8 @@ enum DeviceModel {
         case "iPad4,4", "iPad4,5", "iPad4,6":            return .iPadMini2
         case "iPad4,7", "iPad4,8", "iPad4,9":            return .iPadMini3
         case "iPad5,1", "iPad5,2":                       return .iPadMini4
-        case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .iPadPro
+        case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8",
+        "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8":     return .iPadPro
         case "iPod1,1":                                  return .iPodTouch1Gen
         case "iPod2,1":                                  return .iPodTouch2Gen
         case "iPod3,1":                                  return .iPodTouch3Gen
