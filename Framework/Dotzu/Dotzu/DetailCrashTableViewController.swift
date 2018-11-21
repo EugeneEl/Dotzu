@@ -17,6 +17,10 @@ class DetailCrashTableViewController: UITableViewController {
 
     @objc func shareCrashReport() {
         let controller = UIActivityViewController(activityItems: [crash.toString()], applicationActivities: nil)
+        
+        controller.popoverPresentationController?.sourceView = view
+        controller.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
         present(controller, animated: true, completion: nil)
     }
 

@@ -19,7 +19,16 @@ class DetailResponseBodyViewController: UIViewController {
 
     @IBAction func shareData(_ sender: Any) {
         guard let data = viewmodel?.format else {return}
-        let controller = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+        let controller = UIActivityViewController(activityItems: [data],
+                                                  applicationActivities: nil)
+        
+        var sourceView = view
+        if let button = sender as? UIButton {
+            sourceView = button
+        }
+        controller.popoverPresentationController?.sourceView = sourceView
+        controller.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
         present(controller, animated: true, completion: nil)
     }
 

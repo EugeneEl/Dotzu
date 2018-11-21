@@ -100,6 +100,9 @@ class ManagerListLogViewController: UIViewController {
 
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler:nil)
         alertController.addAction(cancelButton)
+        
+        alertController.popoverPresentationController?.sourceView = view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
 
         self.navigationController?.present(alertController, animated: true, completion: nil)
 
