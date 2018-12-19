@@ -155,9 +155,7 @@ extension DetailRequestViewController: LogNetworkTableViewCellInteracting, Reque
                                                       applicationActivities: nil)
             
             var sourceView = view
-            if let button = sender as? UIButton {
-                sourceView = button
-            }
+
             controller.popoverPresentationController?.sourceView = sourceView
             controller.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
             
@@ -172,9 +170,7 @@ extension DetailRequestViewController: LogNetworkTableViewCellInteracting, Reque
                                                       applicationActivities: nil)
             
             var sourceView = view
-            if let button = sender as? UIButton {
-                sourceView = button
-            }
+
             controller.popoverPresentationController?.sourceView = sourceView
             controller.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
             
