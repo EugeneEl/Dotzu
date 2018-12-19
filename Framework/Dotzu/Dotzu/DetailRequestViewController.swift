@@ -132,9 +132,57 @@ extension DetailRequestViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentSection = sections[indexPath.section]
+        let cell =  initCellContent(cellType: currentSection.cell(row: indexPath.row))
+        
+        if let requestTopCell = cell as? LogNetworkTableViewCell {
+            requestTopCell.delegate = self
+        }
+        if let requestTopCell = cell as? RequestHeadersTableViewCell {
+            requestTopCell.delegate = self
+        }
+        
         return initCellContent(cellType: currentSection.cell(row: indexPath.row))
     }
 }
+
+// MARK: - LogNetworkTableViewCellInteracting
+
+extension DetailRequestViewController: LogNetworkTableViewCellInteracting, RequestHeadersTableViewCellInteracting {
+    func shareDidTapInCell(cell: LogNetworkTableViewCell) {
+        let text = cell.textViewContent.text
+        if text != nil {
+            let controller = UIActivityViewController(activityItems: [text],
+                                                      applicationActivities: nil)
+            
+            var sourceView = view
+            if let button = sender as? UIButton {
+                sourceView = button
+            }
+            controller.popoverPresentationController?.sourceView = sourceView
+            controller.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
+            
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func shareDidTapInCell(_ cell: RequestHeadersTableViewCell) {
+        let text = cell.textview.text
+        if text != nil {
+            let controller = UIActivityViewController(activityItems: [text],
+                                                      applicationActivities: nil)
+            
+            var sourceView = view
+            if let button = sender as? UIButton {
+                sourceView = button
+            }
+            controller.popoverPresentationController?.sourceView = sourceView
+            controller.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 30, height: 30)
+            
+            present(controller, animated: true, completion: nil)
+        }
+    }
+}
+
 
 extension DetailRequestViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

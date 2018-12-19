@@ -8,17 +8,27 @@
 
 import UIKit
 
+protocol LogNetworkTableViewCellInteracting: class {
+    func shareDidTapInCell(cell: LogNetworkTableViewCell)
+}
+
 class LogNetworkTableViewCell: UITableViewCell, LogCellProtocol {
 
     @IBOutlet weak var labelCode: UILabel!
     @IBOutlet weak var textViewContent: UITextView!
     @IBOutlet weak var viewStatus: UIView!
-
+ 
+    weak var delegate: LogNetworkTableViewCellInteracting?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
         textViewContent.isUserInteractionEnabled = false
         viewStatus.layer.cornerRadius = 3
+    }
+    
+    @IBAction fileprivate func shareDidTap() {
+        delegate?.shareDidTapInCell(cell: self)
     }
 
     func configure(log: LogProtocol) {
