@@ -38,9 +38,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmE-Pa-cb3">
-                                <rect key="frame" x="25" y="62" width="20" height="20"/>
+                                <rect key="frame" x="25" y="59" width="20" height="23"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="hAi-NA-em1"/>
                                     <constraint firstAttribute="width" constant="20" id="rH9-5a-fMZ"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,9 +55,11 @@
                         <constraints>
                             <constraint firstItem="cmE-Pa-cb3" firstAttribute="centerX" secondItem="e0r-eS-bBn" secondAttribute="centerX" id="1pk-D3-Sqe"/>
                             <constraint firstAttribute="width" constant="70" id="Hbo-r0-vFi"/>
+                            <constraint firstItem="cmE-Pa-cb3" firstAttribute="top" secondItem="4m9-4x-GiX" secondAttribute="bottom" constant="2.5" id="VNj-5O-RYq"/>
                             <constraint firstItem="4m9-4x-GiX" firstAttribute="leading" secondItem="e0r-eS-bBn" secondAttribute="leading" id="WGp-ax-Ujo"/>
                             <constraint firstItem="4m9-4x-GiX" firstAttribute="centerY" secondItem="e0r-eS-bBn" secondAttribute="centerY" id="ctf-bt-nBc"/>
                             <constraint firstAttribute="trailing" secondItem="4m9-4x-GiX" secondAttribute="trailing" id="f9l-9M-Q1c"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="92" id="j0L-rT-i9V"/>
                             <constraint firstAttribute="bottom" secondItem="cmE-Pa-cb3" secondAttribute="bottom" constant="10" id="w2k-Ze-zdL"/>
                         </constraints>
                     </view>
