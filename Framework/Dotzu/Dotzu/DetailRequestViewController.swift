@@ -141,7 +141,7 @@ extension DetailRequestViewController: UITableViewDataSource {
             requestTopCell.delegate = self
         }
         
-        return initCellContent(cellType: currentSection.cell(row: indexPath.row))
+        return cell
     }
 }
 

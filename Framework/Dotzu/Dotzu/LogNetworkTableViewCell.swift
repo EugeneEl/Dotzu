@@ -17,6 +17,7 @@ class LogNetworkTableViewCell: UITableViewCell, LogCellProtocol {
     @IBOutlet weak var labelCode: UILabel!
     @IBOutlet weak var textViewContent: UITextView!
     @IBOutlet weak var viewStatus: UIView!
+    @IBOutlet weak var shareButton: UIButton
  
     weak var delegate: LogNetworkTableViewCellInteracting?
     

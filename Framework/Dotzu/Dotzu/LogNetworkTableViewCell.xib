@@ -47,6 +47,9 @@
                                 <state key="normal" image="share">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareDidTap" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nqN-a2-17Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.199973762" green="0.2000150383" blue="0.19997116919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,6 +87,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="labelCode" destination="4m9-4x-GiX" id="a7T-WJ-j9N"/>
+                <outlet property="shareButton" destination="cmE-Pa-cb3" id="yXH-9u-52k"/>
                 <outlet property="textViewContent" destination="362-vc-zay" id="2Xx-aC-cON"/>
                 <outlet property="viewStatus" destination="2a2-Z8-RqF" id="nBd-2b-aoE"/>
             </connections>

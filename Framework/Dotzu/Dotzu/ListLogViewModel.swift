@@ -42,6 +42,9 @@ class ListLogDataSource<T>: NSObject, UITableViewDataSource where T: LogProtocol
         guard let cell = tableView.dequeueCell(cell: model.cell) as? LogCellProtocol else {
             return UITableViewCell()
         }
+        if let topCell = cell as? LogNetworkTableViewCell {
+            topCell.shareButton.isHidden = true 
+        }
         cell.configure(log: model)
         return cell as? UITableViewCell ?? UITableViewCell()
     }
