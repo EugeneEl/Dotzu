@@ -37,6 +37,7 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
         guard let controller = storyboard.instantiateInitialViewController() else {
             return
         }
+        controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
     }
 
