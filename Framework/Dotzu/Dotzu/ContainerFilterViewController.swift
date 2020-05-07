@@ -17,7 +17,7 @@ class ContainerFilterViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIView.animate(withDuration: 0.5, delay: 0.3, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         }, completion: nil)
     }
@@ -44,14 +44,14 @@ class ContainerFilterViewController: UIViewController {
         super.viewDidLayoutSubviews()
         guard let controller = state.controller as? UIViewController else {return}
         currentFilterController = controller as? FilterViewControllerProtocol
-        addChildViewController(controller)
+        addChild(controller)
         controller.view.frame = view.bounds
         containerView.addSubview(controller.view)
-        controller.didMove(toParentViewController: self)
+        controller.didMove(toParent: self)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.bringSubview(toFront: toolbar)
+        view.bringSubviewToFront(toolbar)
     }
 }

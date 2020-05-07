@@ -148,7 +148,7 @@ class ManagerListLogViewController: UIViewController {
         tableview.registerCellWithNib(cell: LogTableViewCell.self)
         tableview.registerCellWithNib(cell: LogNetworkTableViewCell.self)
         tableview.estimatedRowHeight = 50
-        tableview.rowHeight = UITableViewAutomaticDimension
+        tableview.rowHeight = UITableView.automaticDimension
         tableview.dataSource = dataSourceLogs
         tableview.delegate = self
     }
