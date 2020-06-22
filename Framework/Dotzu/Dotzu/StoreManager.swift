@@ -22,11 +22,12 @@ class StoreManager<T> where T: NSCoding {
         self.store = store
     }
 
-    private func archiveLogs(logs: [T]) {
-        let dataArchive = NSKeyedArchiver.archivedData(withRootObject: logs)
-        UserDefaults.standard.set(dataArchive, forKey: store.rawValue)
-        UserDefaults.standard.synchronize()
-    }
+	private func archiveLogs(logs: [T]) {
+		let dataArchive = try? NSKeyedArchiver.archivedData(withRootObject: logs)
+		UserDefaults.standard.set(dataArchive, forKey: store.rawValue)
+		UserDefaults.standard.synchronize()
+		
+	}
 
     func add(log: T) {
         var logs = self.logs()
@@ -41,7 +42,7 @@ class StoreManager<T> where T: NSCoding {
     func logs() -> [T] {
         guard let data = UserDefaults.standard.object(forKey: store.rawValue) as? NSData else {return []}
         do {
-            let dataArchive = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data)
+            let dataArchive = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data as Data)
             return dataArchive as? [T] ?? []
         } catch {
             return []

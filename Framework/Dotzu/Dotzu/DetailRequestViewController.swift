@@ -87,7 +87,7 @@ class DetailRequestViewController: UIViewController {
         tableview.registerCellWithNib(cell: RequestDataHttpBodyTableViewCell.self)
 
         tableview.estimatedRowHeight = 50
-        tableview.rowHeight = UITableViewAutomaticDimension
+		tableview.rowHeight = UITableView.automaticDimension
         tableview.dataSource = self
         tableview.delegate = self
     }

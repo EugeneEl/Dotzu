@@ -95,7 +95,7 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
                            delay: 0,
                            usingSpringWithDamping: 0.8,
                            initialSpringVelocity: 6,
-                           options: UIViewAnimationOptions.allowUserInteraction,
+						   options: UIView.AnimationOptions.allowUserInteraction,
                            animations: {
                             self.button.center = CGPoint(x: finalX, y: finalY)
                             self.button.transform = CGAffineTransform.identity

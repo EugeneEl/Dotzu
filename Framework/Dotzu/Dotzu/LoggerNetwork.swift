@@ -13,8 +13,8 @@ fileprivate var bodyValues = [String:Data]()
 extension NSMutableURLRequest {
 
     @objc class func httpBodyHackSwizzle() {
-        let setHttpBody = class_getInstanceMethod(self, #selector(setter: NSMutableURLRequest.httpBody))
-        let httpBodyHackSetHttpBody = class_getInstanceMethod(self, #selector(self.httpBodyHackSetHttpBody(body:)))
+		guard let setHttpBody = class_getInstanceMethod(self, #selector(setter: NSMutableURLRequest.httpBody)) else { return }
+		guard let httpBodyHackSetHttpBody = class_getInstanceMethod(self, #selector(self.httpBodyHackSetHttpBody(body:))) else { return }
         method_exchangeImplementations(setHttpBody, httpBodyHackSetHttpBody)
     }
 

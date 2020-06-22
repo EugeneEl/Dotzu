@@ -29,16 +29,16 @@ class LogNetworkTableViewCell: UITableViewCell, LogCellProtocol {
 
         let attstr = NSMutableAttributedString(string: stringContent)
 
-        attstr.addAttribute(NSForegroundColorAttributeName, value: UIColor.white,
-                            range: NSMakeRange(0, stringContent.characters.count))
+		attstr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white,
+                            range: NSMakeRange(0, stringContent.count))
         if LogsSettings.shared.date {
-            let range = NSMakeRange(0, formatDate.characters.count)
-            attstr.addAttribute(NSForegroundColorAttributeName, value: Color.mainGreen, range: range)
-            attstr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 12), range: range)
+            let range = NSMakeRange(0, formatDate.count)
+			attstr.addAttribute(NSAttributedString.Key.foregroundColor, value: Color.mainGreen, range: range)
+			attstr.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 12), range: range)
         }
-        let range = NSMakeRange(formatDate.characters.count, request.method.characters.count + 2)
-        attstr.addAttribute(NSForegroundColorAttributeName, value: UIColor.lightGray, range: range)
-        attstr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 17), range: range)
+        let range = NSMakeRange(formatDate.count, request.method.count + 2)
+		attstr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: range)
+		attstr.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 17), range: range)
         textViewContent.attributedText = attstr
 
         labelCode.text = "\(request.code)"
